@@ -1,0 +1,54 @@
+{
+  "name": "roshandelpoor/laravel-eureka-discovery",
+  "description": "Register Laravel Applications in Eureka Server to register, deRegister, and discover",
+  "keywords": [
+    "eureka",
+    "laravel-eureka"
+  ],
+  "homepage": "https://github.com/roshandelpoor/laravel-eureka-discover",
+  "authors": [
+    {
+      "name": "Roshandelpoor",
+      "email": "roshandelpoor@outlook.com"
+    }
+  ],
+  "require": {
+    "php": "^7.1|^7.2|^7.3|^7.4|^8.0|^8.1|^8.2",
+    "laravel/framework": "5.5.0",
+    "roshandelpoor/register-php-app-in-eureka": "dev-main",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Eureka\\LaravelEureka\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Eureka\\LaravelEureka\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit tests",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "kylekatarnls/update-helper": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Eureka\\LaravelEureka\\LaravelEurekaServiceProvider"
+      ],
+      "aliases": {
+        "LaravelEureka": "Eureka\\LaravelEureka\\LaravelEurekaFacade"
+      }
+    }
+  }
+}

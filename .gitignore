@@ -1,0 +1,7 @@
+vendor
+logs
+*.log*
+.phpunit.result.cache
+.idea
+build
+composer.lock
