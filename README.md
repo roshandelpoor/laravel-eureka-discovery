@@ -1,52 +1,38 @@
-# Very short description of the package
+# Register Laravel In Eureka (Netflix Eureka Spring Cloud)
+This Package is a library that interacts with the Eureka Server to register, deregister, and discover other services. ( Spring Boot - Eureka Server is an application that holds the information about all client-service applications. Every Micro service will register into the Eureka server and Eureka server knows all the client applications running on each port and IP address. Eureka Server is also known as Discovery Server.)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/eureka/laravel-eureka.svg?style=flat-square)](https://packagist.org/packages/eureka/laravel-eureka)
-[![Total Downloads](https://img.shields.io/packagist/dt/eureka/laravel-eureka.svg?style=flat-square)](https://packagist.org/packages/eureka/laravel-eureka)
-![GitHub Actions](https://github.com/eureka/laravel-eureka/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
-
-## Installation
-
-You can install the package via composer:
-
+# Installation
+You can install this package using [Composer]:
 ```bash
-composer require eureka/laravel-eureka
+composer require "roshandelpoor/laravel-eureka-discovery": "dev-main"
 ```
 
-## Usage
+
+# Documentation
+## Use it
 
 ```php
-// Usage description here
+1- add .env -> [ APP_URL ]
+                Example:: APP_URL=http://127.0.0.1:8000
+
+2- add .env -> [ EUREKA_URL ]
+                Example:: EUREKA_URL=http://localhost:8761/myeureka
+
+3- enable [ php artisan schedule:work ] in your app that it is register your app in eureka every 60 second
+
+4- enjoy it
 ```
 
-### Testing
 
-```bash
-composer test
-```
+# Contributing
+If you find any bugs or have suggestions for new features, feel free to open an issue or submit a pull request on
+GitHub.
 
-### Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+# License
+Super Tools is open-source software licensed under the MIT license.
 
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-### Security
-
-If you discover any security related issues, please email roshandelpoor@outlook.com instead of using the issue tracker.
-
-## Credits
-
--   [Roshandelpoor](https://github.com/eureka)
--   [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 ## Laravel Package Boilerplate
-
 This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).

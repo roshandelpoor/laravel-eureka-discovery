@@ -1,8 +1,5 @@
 <?php
 
-/*
- * You can place your custom package configuration in here.
- */
 return [
-
+    "url" => env('EUREKA_URL', 'http://localhost:8761/myeureka')
 ];
