@@ -5,7 +5,7 @@ This Package is a library that interacts with the Eureka Server to register, der
 # Installation
 You can install this package using [Composer]:
 ```bash
-composer require "roshandelpoor/laravel-eureka-discovery": "dev-main"
+composer require "roshandelpoor/laravel-eureka-discovery":"dev-main"
 ```
 
 
