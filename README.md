@@ -8,20 +8,26 @@ You can install this package using [Composer]:
 composer require "roshandelpoor/laravel-eureka-discovery":"dev-main"
 ```
 
+For Laravel <= 5.6 Add to your "providers" array in config/app.php this line:
+```angular2html
+roshandelpoor\Eureka\LaravelEureka\LaravelEurekaServiceProvider::class
+```
 
 # Documentation
-## Use it
+## SetUp And Use it
 
 ```php
-1- add .env -> [ APP_URL ]
-                Example:: APP_URL=http://127.0.0.1:8000
 
-2- add .env -> [ EUREKA_URL ]
-                Example:: EUREKA_URL=http://localhost:8761/myeureka
+Your environment should provide variables:
+    APP_URL=http://127.0.0.1:8000
+    EUREKA_URL=http://localhost:8761/myeureka
+    
 
-3- enable [ php artisan schedule:work ] in your app that it is register your app in eureka every 60 second
+Finally :: enable [ php artisan schedule:work ] 
+    in your app that it is register your app in eureka every 60 second
 
-4- enjoy it
+
+enjoy it
 ```
 
 

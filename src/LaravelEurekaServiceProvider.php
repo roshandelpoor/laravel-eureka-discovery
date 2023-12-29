@@ -4,7 +4,7 @@ namespace Eureka\LaravelEureka;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\ServiceProvider;
-use Eureka\LaravelEureka\commands\LaravelEurekaDiscoverCommand;
+use Eureka\LaravelEureka\Commands\LaravelEurekaDiscoverCommand;
 
 class LaravelEurekaServiceProvider extends ServiceProvider
 {
@@ -15,13 +15,13 @@ class LaravelEurekaServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         if (! $this->app->routesAreCached()) {
-            require __DIR__.'/../routes/eureka.php';
+            require __DIR__ . '/Routes/eureka.php';
         }
 
         if ($this->app->runningInConsole()) {
 
             $this->publishes([
-                __DIR__ . '/../config/eureka.php' => config_path('eureka.php'),
+                __DIR__ . '/Config/eureka.php' => config_path('eureka.php'),
             ], 'config');
 
             $this->publishes([
@@ -48,8 +48,7 @@ class LaravelEurekaServiceProvider extends ServiceProvider
 
     public function register()
     {
-        // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__ . '/../config/eureka.php', 'laravel-eureka');
+        $this->mergeConfigFrom(__DIR__ . '/Config/eureka.php', 'laravel-eureka');
 
         $this->app->singleton('discover-eureka', function ($app) {
             return new LaravelEurekaDiscoverCommand;
